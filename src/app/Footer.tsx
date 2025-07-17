@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
           <div className="flex items-start gap-2">
             <span className="material-icons text-yellow-400">email</span>
-            <span>info@lighthousechurch.com</span>
+            <span>info@lighthouseatlanta.com</span>
           </div>
         </div>
         {/* Quick Links */}
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
-        &copy; {new Date().getFullYear()} Lighthouse Church. All rights reserved.
+        &copy; {new Date().getFullYear()} Lighthouse Atlanta. All rights reserved.
       </div>
     </footer>
   );
