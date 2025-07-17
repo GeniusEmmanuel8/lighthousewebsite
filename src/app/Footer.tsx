@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-8">
         {/* Church Info */}
         <div>
-          <h2 className="text-2xl font-bold text-yellow-400 mb-4">Lighthouse Church</h2>
+          <h2 className="text-xl font-bold text-yellow-400 mb-4">Lighthouse Atlanta</h2>
           <p className="mb-6">A welcoming community where faith, family, and fellowship come together. We're here to help you grow in your relationship with Jesus Christ.</p>
           <div className="flex items-start gap-2 mb-2">
             <span className="material-icons text-yellow-400">location_on</span>
