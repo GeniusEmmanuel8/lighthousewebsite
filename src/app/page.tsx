@@ -50,7 +50,7 @@ export default function Home() {
 
       {/* Welcome / Our Mission Section */}
       <section className="py-20 px-4 bg-white text-center">
-        <h2 className="text-4xl md:text-5xl font-black text-blue-900 mb-4">Welcome to Lighthouse Church</h2>
+        <h2 className="text-4xl md:text-5xl font-black text-blue-900 mb-4">Welcome to Lighthouse Atlanta</h2>
         <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-8">We are a vibrant, Christ-centered community passionate about loving God, loving people, and making disciples. Our mission is to shine God’s light in our city and beyond.</p>
         <Link href="/about" className="inline-block bg-yellow-400 text-blue-900 font-bold px-8 py-3 rounded-full shadow-lg hover:bg-blue-900 hover:text-yellow-400 transition-all text-lg">Learn More About Us</Link>
       </section>
@@ -134,7 +134,7 @@ export default function Home() {
             {[1,2,3].map((i) => (
               <div key={i} className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center">
                 <Image src="/logo4.jpeg" alt={`Testimonial ${i}`} width={64} height={64} className="mb-4 rounded-full" />
-                <blockquote className="italic text-gray-700 mb-4">“Lighthouse Church has changed my life and helped me grow closer to God.”</blockquote>
+                <blockquote className="italic text-gray-700 mb-4">“Lighthouse Atlanta has changed my life and helped me grow closer to God.”</blockquote>
                 <p className="font-bold text-blue-900">Member {i}</p>
               </div>
             ))}
