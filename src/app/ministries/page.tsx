@@ -19,7 +19,7 @@ export default function Ministries() {
           Our Ministries
           <span className="block w-24 h-1 mx-auto mt-4 bg-yellow-400 rounded-full" />
         </h1>
-        <p className="relative z-10 text-xl md:text-2xl max-w-2xl text-center mb-8">Find your place to serve, grow, and belong at Lighthouse Church. Every ministry is a chance to shine God’s light!</p>
+        <p className="relative z-10 text-xl md:text-2xl max-w-2xl text-center mb-8">Find your place to serve, grow, and belong at Lighthouse Atlanta. Every ministry is a chance to shine God’s light!</p>
       </section>
       {/* Ministries Grid */}
       <section className="py-16 px-4 bg-gray-50">

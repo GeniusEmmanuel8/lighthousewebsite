@@ -42,7 +42,7 @@ export default function ContactContent() {
             </div>
             <div className="flex items-center gap-3">
               <span className="material-icons text-yellow-400">email</span>
-              <span>info@lighthousechurch.com</span>
+              <span>info@lighthouseatlanta.com</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="material-icons text-yellow-400">schedule</span>
@@ -52,7 +52,7 @@ export default function ContactContent() {
           {/* Embedded Google Map */}
           <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200">
             <iframe
-              title="Lighthouse Church Location"
+              title="Lighthouse Atlanta Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.964963964019!2d-83.8198576847936!3d34.1206571805736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5a2e2e2e2e2e2%3A0x2e2e2e2e2e2e2e2e!2s925%20Highway%20124%2C%20Braselton%2C%20GA%2030517!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
               width="100%"
               height="250"

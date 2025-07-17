@@ -11,7 +11,7 @@ export default function AboutContent() {
           Who We Are
           <span className="block w-24 h-1 mx-auto mt-4 bg-yellow-400 rounded-full" />
         </h1>
-        <p className="relative z-10 text-xl md:text-2xl max-w-2xl text-center mb-8">Welcome to Lighthouse Church! We are a vibrant, Christ-centered community passionate about loving God, loving people, and making disciples.</p>
+        <p className="relative z-10 text-xl md:text-2xl max-w-2xl text-center mb-8">Welcome to Lighthouse Atlanta! We are a vibrant, Christ-centered community passionate about loving God, loving people, and making disciples.</p>
       </section>
       {/* Mission Section */}
       <section className="py-16 px-4 bg-gray-50 text-center">

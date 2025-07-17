@@ -8,7 +8,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center py-24 bg-gradient-to-br from-church-navy to-church-gold text-white">
         <h1 className="text-5xl md:text-7xl font-black mb-4">Who We Are</h1>
-        <p className="text-xl md:text-2xl max-w-2xl text-center mb-8">Welcome to Lighthouse Church! We are a vibrant, Christ-centered community passionate about loving God, loving people, and making disciples.</p>
+        <p className="text-xl md:text-2xl max-w-2xl text-center mb-8">Welcome to Lighthouse Atlanta! We are a vibrant, Christ-centered community passionate about loving God, loving people, and making disciples.</p>
       </section>
       {/* Mission Section */}
       <section className="py-16 px-4 bg-gray-50 text-center">
