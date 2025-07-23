@@ -5,18 +5,90 @@ export default function AboutContent() {
   return (
     <main className="bg-white min-h-screen font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center py-24 bg-gradient-to-br from-blue-900 via-indigo-700 to-yellow-500 text-white overflow-hidden">
-        <div className="absolute inset-0 animate-gradient-x bg-gradient-to-r from-blue-900 via-yellow-500 to-indigo-700 opacity-30 blur-2xl z-0" />
-        <h1 className="relative z-10 text-5xl md:text-7xl font-black mb-4 drop-shadow-2xl">
+      <section className="relative flex flex-col items-center justify-center py-32 md:py-40 text-white overflow-hidden mt-16 md:mt-20">
+        {/* Church Photo Background */}
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/church photo.jpeg" 
+            alt="Lighthouse Atlanta Church" 
+            fill 
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/50 z-10"></div>
+        </div>
+        <h1 className="relative z-20 text-5xl md:text-7xl font-black mb-4 drop-shadow-2xl">
           Who We Are
           <span className="block w-24 h-1 mx-auto mt-4 bg-yellow-400 rounded-full" />
         </h1>
-        <p className="relative z-10 text-xl md:text-2xl max-w-2xl text-center mb-8">Welcome to Lighthouse Atlanta! We are a vibrant, Christ-centered community passionate about loving God, loving people, and making disciples.</p>
+        <p className="relative z-20 text-xl md:text-2xl max-w-2xl text-center mb-8">Welcome to Lighthouse Atlanta! We are a vibrant, Christ-centered community passionate about loving God, loving people, and making disciples.</p>
       </section>
-      {/* Mission Section */}
-      <section className="py-16 px-4 bg-gray-50 text-center">
-        <h2 className="text-4xl font-bold text-blue-900 mb-4">Our Mission</h2>
-        <p className="text-xl max-w-3xl mx-auto text-gray-700">To lead people into a growing relationship with Jesus Christ and to shine His light in our city and beyond.</p>
+      {/* Mission & Vision Section */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-6xl md:text-7xl font-black text-church-navy mb-8">Our Vision & Mission</h2>
+            <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Our vision is adapted from the main vision of the RCCG
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Vision */}
+            <div className="bg-white rounded-3xl shadow-xl p-10 hover:shadow-2xl transition-all">
+              <h3 className="text-4xl font-black text-church-navy mb-8 flex items-center">
+                <span className="text-church-gold mr-4">•</span>
+                Vision
+              </h3>
+              <p className="text-lg text-gray-700 mb-6">Our vision is adapted from the main vision of the RCCG:</p>
+              <ul className="space-y-4 text-left">
+                <li className="flex items-start">
+                  <span className="text-church-gold mr-3 mt-1">•</span>
+                  <span className="text-gray-700">To make Heaven....</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-church-gold mr-3 mt-1">•</span>
+                  <span className="text-gray-700">To take as many people as possible with us....</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-church-gold mr-3 mt-1">•</span>
+                  <span className="text-gray-700">To have a member of RCCG in every family of all nations...</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-church-gold mr-3 mt-1">•</span>
+                  <span className="text-gray-700">To accomplish number 1 above, Holiness will be our lifestyle...</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-church-gold mr-3 mt-1">•</span>
+                  <span className="text-gray-700">To accomplish no. 2 and 3 above, we will plant Churches within 5 minutes driving distance in every city and town of developed countries.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-church-gold mr-3 mt-1">•</span>
+                  <span className="text-gray-700">To pursue the above objectives until every nation in the World is reached for Jesus Christ our Lord!</span>
+                </li>
+              </ul>
+            </div>
+            {/* Mission */}
+            <div className="bg-white rounded-3xl shadow-xl p-10 hover:shadow-2xl transition-all">
+              <h3 className="text-4xl font-black text-church-navy mb-8 flex items-center">
+                <span className="text-church-gold mr-4">•</span>
+                Mission
+              </h3>
+              <p className="text-lg text-gray-700 mb-6">To be the Light of hope in a dark world, amplifying the joy of the Lord, bringing liberty to the captive, and a more purposeful life to all.</p>
+              <div className="mt-8">
+                <h4 className="text-2xl font-bold text-church-navy mb-4 flex items-center">
+                  <span className="text-church-gold mr-3">•</span>
+                  Mission Statement
+                </h4>
+                <p className="text-lg text-gray-700 mb-4">To be a light of hope in a dark world</p>
+                <div className="mt-6">
+                  <p className="text-lg font-semibold text-church-navy">Payoff Line:</p>
+                  <p className="text-xl italic text-church-gold font-bold">"...Be the Light, Shine your light"</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       {/* Our Heart & Rhythms */}
       <section className="py-16 px-4 bg-white">
@@ -45,7 +117,7 @@ export default function AboutContent() {
           </div>
           <div className="bg-white rounded-xl shadow p-6 text-center">
             <h4 className="text-xl font-bold mb-2">Mission</h4>
-            <p>We are sent to love, serve, and share the hope of Jesus with our neighbors and the nations.</p>
+            <p>To be the Light of hope in a dark world, amplifying the joy of the Lord, bringing liberty to the captive, and a more purposeful life to all.</p>
           </div>
           <div className="bg-white rounded-xl shadow p-6 text-center">
             <h4 className="text-xl font-bold mb-2">Community</h4>
@@ -78,19 +150,29 @@ export default function AboutContent() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto text-center">
           <Image src="/logo4.jpeg" alt="Pastor" width={96} height={96} className="mx-auto rounded-full mb-4" />
-          <blockquote className="text-2xl italic text-blue-900 mb-4">“We are called to be a lighthouse—shining God’s love and truth in a world that needs hope.”</blockquote>
-          <p className="font-bold text-yellow-600">Pastor John Doe</p>
+          <blockquote className="text-2xl italic text-blue-900 mb-4">
+            "Beloved, we declare by faith that 2025 is our Year of His Power. We trust the Lord to stir up and activate His mighty power already at work within you—bringing you into spiritual maturity and aligning you fully with His divine purpose for your life. May you rise into the fullness of all that God has destined you to be, in Jesus' mighty Name."
+          </blockquote>
+          <p className="text-sm text-gray-600 mb-2">Ephesians 3:18–20 (NKJV)</p>
+          <p className="font-bold text-yellow-600">Pastor Olumide Okeowo</p>
         </div>
       </section>
       {/* Team Section */}
       <section className="py-16 px-4 bg-white">
         <h2 className="text-3xl font-bold text-blue-900 text-center mb-8">Meet Our Team</h2>
         <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-8">
-          {[1,2,3,4].map((i) => (
-            <div key={i} className="bg-gray-100 rounded-xl p-6 text-center shadow">
-              <Image src="/logo4.jpeg" alt={`Team member ${i}`} width={80} height={80} className="mx-auto rounded-full mb-2" />
+          <div className="text-center">
+            <Image src="/akin akinropo.jpeg" alt="Akin Akinropo" width={200} height={300} className="mx-auto mb-4 object-cover rounded-lg" />
+            <h4 className="font-bold text-blue-900">Akin Akinropo</h4>
+          </div>
+          <div className="text-center">
+            <Image src="/Dolapo Akinropo.jpeg" alt="Dolapo Akinropo" width={200} height={300} className="mx-auto mb-2 object-cover rounded-lg" />
+            <h4 className="font-bold text-blue-900">Dolapo Akinropo</h4>
+          </div>
+          {[3,4].map((i) => (
+            <div key={i} className="text-center">
+              <Image src="/logo4.jpeg" alt={`Team member ${i}`} width={200} height={300} className="mx-auto mb-2 object-cover rounded-lg" />
               <h4 className="font-bold text-blue-900">Team Member {i}</h4>
-              <p className="text-gray-600">Role</p>
             </div>
           ))}
         </div>

@@ -18,9 +18,11 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-xl bg-white/30 border-b border-white/20 shadow-lg">
       <nav className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12">
         {/* Logo and Name */}
-        <div className="flex items-center gap-3">
-          <Image src="/logo4.jpeg" alt="Lighthouse Atlanta Logo" width={48} height={48} className="h-12 w-12 object-contain rounded-full shadow-md" />
-          <span className="text-xl md:text-2xl font-black text-yellow-400 drop-shadow-sm">Lighthouse Atlanta</span>
+        <div className="flex items-center gap-1">
+          <Link href="/" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
+            <Image src="/Unknown.png" alt="Lighthouse Atlanta Logo" width={48} height={48} className="h-12 w-12 object-contain rounded-full shadow-md" />
+            <span className="text-xl md:text-2xl font-black text-black drop-shadow-sm">Lighthouse Atlanta</span>
+          </Link>
         </div>
         {/* Nav Links */}
         <div className="hidden md:flex gap-8">

@@ -1,0 +1,44 @@
+name: Deploy Lighthouse Atlanta Website
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build project
+      run: npm run build
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-files
+        path: out/
+        retention-days: 30
+
+    - name: Deploy to WordPress (Manual)
+      if: github.ref == 'refs/heads/main'
+      run: |
+        echo "🚀 Build completed successfully!"
+        echo "📁 Static files are ready in the 'out' directory"
+        echo "🌐 Manual deployment required:"
+        echo "1. Download the build artifacts"
+        echo "2. Upload to your WordPress hosting"
+        echo "3. Update DNS if necessary" 

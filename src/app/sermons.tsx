@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const sermons = [
-  { title: 'The Light of the World', speaker: 'Pastor John Doe', date: 'July 7, 2025', img: '/logo4.jpeg' },
-  { title: 'Faith Over Fear', speaker: 'Pastor Jane Smith', date: 'June 30, 2025', img: '/logo4.jpeg' },
-  { title: 'Hope in the Storm', speaker: 'Pastor John Doe', date: 'June 23, 2025', img: '/logo4.jpeg' },
+  { title: 'The Light of the World', speaker: 'Pastor Olumide Okeowo', date: 'July 7, 2025', img: '/logo4.jpeg' },
+  { title: 'Walking in Faith', speaker: 'Pastor Olumide Okeowo', date: 'June 30, 2025', img: '/logo4.jpeg' },
+  { title: 'Hope in the Storm', speaker: 'Pastor Olumide Okeowo', date: 'June 23, 2025', img: '/logo4.jpeg' },
 ];
 
 export default function Sermons() {
@@ -33,7 +34,7 @@ export default function Sermons() {
       <section className="py-16 px-4 bg-church-navy text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Want More?</h2>
         <p className="text-xl mb-8">Browse our full sermon archive or join us live this Sunday!</p>
-        <a href="/" className="inline-block bg-church-gold text-white px-8 py-3 rounded-full font-semibold shadow hover:bg-white hover:text-church-navy transition">Back to Home</a>
+        <Link href="/" className="inline-block bg-church-gold text-white px-8 py-3 rounded-full font-semibold shadow hover:bg-white hover:text-church-navy transition">Back to Home</Link>
       </section>
     </main>
   );

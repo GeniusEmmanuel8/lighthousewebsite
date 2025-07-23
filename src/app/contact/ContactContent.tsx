@@ -6,7 +6,7 @@ export default function ContactContent() {
       {/* Hero Section */}
       <section className="text-center mb-12">
         <h1 className="text-5xl md:text-6xl font-black text-blue-900 mb-4 drop-shadow-lg">Contact Us</h1>
-        <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto mb-6">We'd love to connect, pray with you, and help you find your place in our Lighthouse family. Reach out below or visit us in person!</p>
+        <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto mb-6">We&apos;d love to connect, pray with you, and help you find your place in our Lighthouse family. Reach out below or visit us in person!</p>
       </section>
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         {/* Contact Form Card */}
@@ -33,7 +33,7 @@ export default function ContactContent() {
           <div className="bg-blue-900/80 rounded-3xl p-8 text-white shadow-xl flex flex-col gap-4">
             <h3 className="text-xl font-bold text-yellow-400 mb-2">Our Location & Contact</h3>
             <div className="flex items-center gap-3">
-              <span className="material-icons text-yellow-400">location_on</span>
+              <span className="material-icons text-yellow-400">location</span>
               <span>925 Highway 124, Braselton GA, 30517</span>
             </div>
             <div className="flex items-center gap-3">

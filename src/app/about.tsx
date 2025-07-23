@@ -75,8 +75,11 @@ export default function About() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto text-center">
           <Image src="/logo4.jpeg" alt="Pastor" width={96} height={96} className="mx-auto rounded-full mb-4" />
-          <blockquote className="text-2xl italic text-church-navy mb-4">“We are called to be a lighthouse—shining God’s love and truth in a world that needs hope.”</blockquote>
-          <p className="font-bold text-church-gold">Pastor John Doe</p>
+          <blockquote className="text-2xl italic text-church-navy mb-4">
+            "Beloved, we declare by faith that 2025 is our Year of His Power. We trust the Lord to stir up and activate His mighty power already at work within you—bringing you into spiritual maturity and aligning you fully with His divine purpose for your life. May you rise into the fullness of all that God has destined you to be, in Jesus' mighty Name."
+          </blockquote>
+          <p className="text-sm text-gray-600 mb-2">Ephesians 3:18–20 (NKJV)</p>
+          <p className="font-bold text-church-gold">Pastor Olumide Okeowo</p>
         </div>
       </section>
       {/* Team Section */}
