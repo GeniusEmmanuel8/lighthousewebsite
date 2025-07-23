@@ -25,7 +25,7 @@ export default function Sermons() {
               <h3 className="text-xl font-bold text-church-navy mb-2">{sermon.title}</h3>
               <p className="text-gray-700 mb-1">{sermon.speaker}</p>
               <p className="text-gray-500 text-sm">{sermon.date}</p>
-              <a href="#" className="mt-4 inline-block bg-church-gold text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-church-navy transition">Watch</a>
+              <Link href="#" className="mt-4 inline-block bg-church-gold text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-church-navy transition">Watch</Link>
             </div>
           ))}
         </div>
