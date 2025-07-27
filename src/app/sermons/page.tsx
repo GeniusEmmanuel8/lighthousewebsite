@@ -44,9 +44,9 @@ export default function Sermons() {
       {/* Sermons Grid */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-black text-blue-900 mb-4 text-center">Latest African Church Sermons</h2>
+          <h2 className="text-4xl md:text-5xl font-black text-blue-900 mb-4 text-center">Latest Church Sermons</h2>
           <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-            Experience authentic African preaching and powerful messages from Pastor Olumide Okeowo. Be encouraged by God&apos;s Word.
+            Experience authentic preaching and powerful messages from Pastor Olumide Okeowo. Be encouraged by God&apos;s Word.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {sermons.map((sermon, index) => (
