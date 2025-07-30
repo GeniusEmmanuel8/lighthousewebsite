@@ -162,23 +162,33 @@ export default function AboutContent() {
         <h2 className="text-3xl font-bold text-blue-900 text-center mb-8">Meet Our Team</h2>
         <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-8">
           <div className="text-center">
-            <Image src="/akin akinropo.jpeg" alt="Akin Akinropo" width={200} height={300} className="mx-auto mb-4 object-cover rounded-lg" />
+            <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+              <Image src="/akin akinropo.jpeg" alt="Akin Akinropo" width={192} height={256} className="w-full h-full object-cover object-top" />
+            </div>
             <h4 className="font-bold text-blue-900">Akin Akinropo</h4>
           </div>
           <div className="text-center">
-            <Image src="/Dolapo Akinropo.jpeg" alt="Dolapo Akinropo" width={200} height={300} className="mx-auto mb-2 object-cover rounded-lg" />
+            <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+              <Image src="/Dolapo Akinropo.jpeg" alt="Dolapo Akinropo" width={192} height={256} className="w-full h-full object-cover object-top" />
+            </div>
             <h4 className="font-bold text-blue-900">Dolapo Akinropo</h4>
           </div>
           <div className="text-center">
-            <Image src="/DamilolaOkeowo.jpg" alt="Damilola Okeowo" width={200} height={300} className="mx-auto mb-2 object-cover rounded-lg" />
+            <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+              <Image src="/DamilolaOkeowo.jpg" alt="Damilola Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
+            </div>
             <h4 className="font-bold text-blue-900">Damilola Okeowo</h4>
           </div>
           <div className="text-center">
-            <Image src="/IsaacAkingbade.jpg" alt="Isaac Akingbade" width={200} height={300} className="mx-auto mb-2 object-cover rounded-lg" />
+            <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+              <Image src="/IsaacAkingbade.jpg" alt="Isaac Akingbade" width={192} height={256} className="w-full h-full object-cover object-top" />
+            </div>
             <h4 className="font-bold text-blue-900">Isaac Akingbade</h4>
           </div>
           <div className="text-center">
-            <Image src="/IsaacAyomide.jpg" alt="Isaac Ayomide" width={200} height={300} className="mx-auto mb-2 object-cover rounded-lg" />
+            <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+              <Image src="/IsaacAyomide.jpg" alt="Isaac Ayomide" width={192} height={256} className="w-full h-full object-cover object-top" />
+            </div>
             <h4 className="font-bold text-blue-900">Isaac Ayomide</h4>
           </div>
         </div>
