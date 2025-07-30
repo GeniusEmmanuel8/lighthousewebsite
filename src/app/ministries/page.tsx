@@ -3,13 +3,12 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Ministries - Lighthouse Atlanta African Church | Youth, Prayer & Community Outreach',
-  description: 'Explore our ministries at Lighthouse Atlanta African church in Atlanta, GA. Join our youth ministry, prayer ministry, and community outreach programs. RCCG church serving the African community.',
-  keywords: 'African church ministries Atlanta, Lighthouse Atlanta ministries, RCCG church ministries Atlanta, African youth ministry Atlanta, prayer ministry Atlanta, community outreach Atlanta, African church programs',
+  title: 'Ministries - Lighthouse Atlanta Church | Youth, Prayer & Community Outreach',
+  description: 'Explore our ministries at Lighthouse Atlanta church in Atlanta, GA. Join our youth ministry, prayer ministry, and community outreach programs. RCCG church serving the community.',
+  keywords: 'church ministries Atlanta, Lighthouse Atlanta ministries, RCCG church ministries Atlanta, youth ministry Atlanta, prayer ministry Atlanta, community outreach Atlanta, church programs',
   openGraph: {
-    title: 'Ministries - Lighthouse Atlanta African Church',
-    description: 'Explore our ministries including youth ministry, prayer ministry, and community outreach programs serving the African community in Atlanta.',
-    images: ['/church photo 2.jpeg'],
+    title: 'Ministries - Lighthouse Atlanta Church',
+    description: 'Explore our ministries including youth ministry, prayer ministry, and community outreach programs serving the community in Atlanta.',
   },
 };
 

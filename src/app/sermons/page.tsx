@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Sermons - Lighthouse Atlanta African Church | Pastor Olumide Okeowo Preaching',
-  description: 'Watch powerful sermons by Pastor Olumide Okeowo at Lighthouse Atlanta African church in Atlanta, GA. Experience authentic African preaching and be encouraged by God\'s Word. RCCG church sermons.',
-  keywords: 'African church sermons Atlanta, Pastor Olumide Okeowo sermons, Lighthouse Atlanta sermons, RCCG church sermons Atlanta, African preaching Atlanta, Nigerian pastor Atlanta, Christian sermons Atlanta',
+  title: 'Sermons - Lighthouse Atlanta Church | Pastor Olumide Okeowo Preaching',
+  description: 'Watch powerful sermons by Pastor Olumide Okeowo at Lighthouse Atlanta church in Atlanta, GA. Experience authentic preaching and be encouraged by God\'s Word. RCCG church sermons.',
+  keywords: 'church sermons Atlanta, Pastor Olumide Okeowo sermons, Lighthouse Atlanta sermons, RCCG church sermons Atlanta, preaching Atlanta, pastor Atlanta, Christian sermons Atlanta',
   openGraph: {
-    title: 'Sermons - Lighthouse Atlanta African Church',
-    description: 'Watch powerful sermons by Pastor Olumide Okeowo. Experience authentic African preaching and be encouraged by God\'s Word.',
+    title: 'Sermons - Lighthouse Atlanta Church',
+    description: 'Watch powerful sermons by Pastor Olumide Okeowo. Experience authentic preaching and be encouraged by God\'s Word.',
     images: ['/sermon pic.jpeg'],
   },
 };

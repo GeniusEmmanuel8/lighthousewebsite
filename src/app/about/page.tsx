@@ -2,13 +2,12 @@ import AboutContent from './AboutContent';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us - Lighthouse Atlanta African Church | RCCG Church in Atlanta, GA',
-  description: 'Learn about Lighthouse Atlanta, a vibrant African church in Atlanta, GA. Discover our mission, values, and the African community we serve. RCCG church with authentic worship and powerful preaching.',
-  keywords: 'About African church Atlanta, Lighthouse Atlanta about, RCCG church Atlanta about, African community Atlanta church, Nigerian church Atlanta about, Pastor Olumide Okeowo, African worship Atlanta',
+  title: 'About Us - Lighthouse Atlanta Church | RCCG Church in Atlanta, GA',
+  description: 'Learn about Lighthouse Atlanta, a vibrant church in Atlanta, GA. Discover our mission, values, and the community we serve. RCCG church with authentic worship and powerful preaching.',
+  keywords: 'About church Atlanta, Lighthouse Atlanta about, RCCG church Atlanta about, community Atlanta church, Nigerian church Atlanta about, Pastor Olumide Okeowo, worship Atlanta',
   openGraph: {
-    title: 'About Lighthouse Atlanta - African Church in Atlanta, GA',
-    description: 'Learn about our vibrant African church community in Atlanta. Discover our mission, values, and the African community we serve.',
-    images: ['/church photo.jpeg'],
+    title: 'About Lighthouse Atlanta - Church in Atlanta, GA',
+    description: 'Learn about our vibrant church community in Atlanta. Discover our mission, values, and the community we serve.',
   },
 };
 
