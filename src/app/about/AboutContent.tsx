@@ -160,7 +160,7 @@ export default function AboutContent() {
       {/* Team Section */}
       <section className="py-16 px-4 bg-white">
         <h2 className="text-3xl font-bold text-blue-900 text-center mb-8">Meet Our Team</h2>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-8">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-8">
           <div className="text-center">
             <Image src="/akin akinropo.jpeg" alt="Akin Akinropo" width={200} height={300} className="mx-auto mb-4 object-cover rounded-lg" />
             <h4 className="font-bold text-blue-900">Akin Akinropo</h4>
@@ -169,12 +169,18 @@ export default function AboutContent() {
             <Image src="/Dolapo Akinropo.jpeg" alt="Dolapo Akinropo" width={200} height={300} className="mx-auto mb-2 object-cover rounded-lg" />
             <h4 className="font-bold text-blue-900">Dolapo Akinropo</h4>
           </div>
-          {[3,4].map((i) => (
-            <div key={i} className="text-center">
-              <Image src="/logo4.jpeg" alt={`Team member ${i}`} width={200} height={300} className="mx-auto mb-2 object-cover rounded-lg" />
-              <h4 className="font-bold text-blue-900">Team Member {i}</h4>
-            </div>
-          ))}
+          <div className="text-center">
+            <Image src="/DamilolaOkeowo.jpg" alt="Damilola Okeowo" width={200} height={300} className="mx-auto mb-2 object-cover rounded-lg" />
+            <h4 className="font-bold text-blue-900">Damilola Okeowo</h4>
+          </div>
+          <div className="text-center">
+            <Image src="/IsaacAkingbade.jpg" alt="Isaac Akingbade" width={200} height={300} className="mx-auto mb-2 object-cover rounded-lg" />
+            <h4 className="font-bold text-blue-900">Isaac Akingbade</h4>
+          </div>
+          <div className="text-center">
+            <Image src="/IsaacAyomide.jpg" alt="Isaac Ayomide" width={200} height={300} className="mx-auto mb-2 object-cover rounded-lg" />
+            <h4 className="font-bold text-blue-900">Isaac Ayomide</h4>
+          </div>
         </div>
       </section>
     </main>
