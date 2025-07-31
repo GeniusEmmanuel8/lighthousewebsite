@@ -19,7 +19,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-xl bg-white/30 border-b border-white/20 shadow-lg">
-      <nav className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12">
+      <nav className="max-w-7xl mx-auto flex justify-between items-center py-2 md:py-4 px-4 md:px-12">
         {/* Logo and Name */}
         <div className="flex items-center gap-1">
           <Link href="/" className="flex items-center gap-1 hover:opacity-80 transition-opacity">

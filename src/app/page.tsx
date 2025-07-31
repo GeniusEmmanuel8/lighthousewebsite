@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <main className="bg-white min-h-screen">
       {/* Slideshow Section */}
-      <section className="relative h-[calc(100vh-120px)] md:h-[calc(100vh-80px)] overflow-hidden mt-16 md:mt-20">
+      <section className="relative h-screen overflow-hidden mt-16 md:mt-20">
         {currentSlideData.type === 'video' && (
           <video 
             className="absolute inset-0 w-full h-full object-cover"
@@ -66,7 +66,7 @@ export default function Home() {
         )}
         
         {currentSlideData.type === 'youtube' && (
-          <div className="absolute inset-0 bg-black flex items-center justify-center px-4">
+          <div className="absolute inset-0 bg-black flex items-center justify-center px-4 py-16 md:py-8">
             <div className="text-center text-white max-w-4xl">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black mb-3 md:mb-6 lg:mb-8">
                 {currentSlideData.title}
