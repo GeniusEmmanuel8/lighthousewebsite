@@ -17,33 +17,12 @@ export default function Home() {
       title: 'Watch Our Services Online',
       description: 'Can\'t make it in person? Join us virtually and experience the same powerful worship and teaching.',
       youtubeUrl: 'https://www.youtube.com/@RedeemedChristianChurchofGod'
-    },
-    {
-      type: 'image',
-      src: '/slideshow3.jpeg',
-      alt: 'Church Community',
-      hideOnMobile: true
-    },
-    {
-      type: 'image',
-      src: '/slideshow2.jpeg',
-      alt: 'Church Worship',
-      hideOnMobile: true
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => {
-        const nextSlide = (prev + 1) % slides.length;
-        // Skip images on mobile
-        if (typeof window !== 'undefined' && window.innerWidth < 768) {
-          if (slides[nextSlide].hideOnMobile) {
-            return (nextSlide + 1) % slides.length;
-          }
-        }
-        return nextSlide;
-      });
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 8000); // 8 seconds
 
     return () => clearInterval(timer);
@@ -63,16 +42,6 @@ export default function Home() {
             loop 
             muted 
             playsInline
-          />
-        )}
-        
-        {currentSlideData.type === 'image' && (
-          <Image 
-            src={currentSlideData.src}
-            alt={currentSlideData.alt}
-            fill
-            className="object-cover"
-            priority
           />
         )}
         
@@ -99,21 +68,15 @@ export default function Home() {
 
         {/* Slide indicators */}
         <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {slides.map((slide, index) => {
-            // Hide indicators for images on mobile
-            if (typeof window !== 'undefined' && window.innerWidth < 768 && slide.hideOnMobile) {
-              return null;
-            }
-            return (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
-                  index === currentSlide ? 'bg-white' : 'bg-white/50'
-                }`}
-              />
-            );
-          })}
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
+                index === currentSlide ? 'bg-white' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
