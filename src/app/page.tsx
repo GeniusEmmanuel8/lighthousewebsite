@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <main className="bg-white min-h-screen">
       {/* Slideshow Section */}
-      <section className="relative h-[calc(100vh-80px)] overflow-hidden mt-20">
+      <section className="relative h-[calc(100vh-120px)] md:h-[calc(100vh-80px)] overflow-hidden mt-16 md:mt-20">
         {currentSlideData.type === 'video' && (
           <video 
             className="absolute inset-0 w-full h-full object-cover"
@@ -68,17 +68,17 @@ export default function Home() {
         {currentSlideData.type === 'youtube' && (
           <div className="absolute inset-0 bg-black flex items-center justify-center px-4">
             <div className="text-center text-white max-w-4xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black mb-4 md:mb-8">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-black mb-3 md:mb-6 lg:mb-8">
                 {currentSlideData.title}
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 px-4">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 md:mb-6 lg:mb-8 px-2 md:px-4 leading-relaxed">
                 {currentSlideData.description}
               </p>
               <a 
                 href={currentSlideData.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-red-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-red-700 transition-all shadow-lg hover:shadow-xl"
+                className="bg-red-600 text-white px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-full font-bold text-sm md:text-base lg:text-lg hover:bg-red-700 transition-all shadow-lg hover:shadow-xl"
               >
                 Watch Services Online
               </a>
@@ -87,12 +87,12 @@ export default function Home() {
         )}
 
         {/* Slide indicators */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
                 index === currentSlide ? 'bg-white' : 'bg-white/50'
               }`}
             />
