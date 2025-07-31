@@ -20,8 +20,7 @@ export default function Header() {
         {/* Logo and Name */}
         <div className="flex items-center gap-1">
           <Link href="/" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
-            <Image src="/Unknown.png" alt="Lighthouse Atlanta Logo" width={48} height={48} className="h-12 w-12 object-contain rounded-full shadow-md" />
-            <span className="text-xl md:text-2xl font-black text-black drop-shadow-sm">Lighthouse Atlanta</span>
+            <Image src="/Logo.jpeg" alt="Lighthouse Atlanta Logo" width={64} height={64} className="h-16 w-16 object-contain rounded-full shadow-md" />
           </Link>
         </div>
         {/* Nav Links */}
@@ -42,7 +41,6 @@ export default function Header() {
         </div>
         {/* Action Buttons */}
         <div className="flex items-center gap-4">
-          <button className="bg-yellow-400 text-[#181e29] px-6 py-2 rounded-full font-semibold shadow hover:bg-yellow-300 transition-all">Give</button>
           <button className="bg-white text-[#181e29] border border-[#e5e7eb] px-6 py-2 rounded-full font-semibold shadow hover:bg-gray-100 transition-all">Plan a Visit</button>
         </div>
       </nav>

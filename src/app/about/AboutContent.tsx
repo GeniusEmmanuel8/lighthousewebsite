@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -135,7 +137,7 @@ export default function AboutContent() {
           </div>
           <div className="bg-yellow-500/90 rounded-xl p-6 text-white text-center">
             <h4 className="text-lg font-bold mb-2">The Bible</h4>
-            <p>The Bible is God’s inspired Word, our guide for faith and life.</p>
+            <p>The Bible is God's inspired Word, our guide for faith and life.</p>
           </div>
           <div className="bg-blue-900/90 rounded-xl p-6 text-white text-center">
             <h4 className="text-lg font-bold mb-2">Salvation</h4>
@@ -160,36 +162,55 @@ export default function AboutContent() {
       {/* Team Section */}
       <section className="py-16 px-4 bg-white">
         <h2 className="text-3xl font-bold text-blue-900 text-center mb-8">Meet Our Team</h2>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-8">
-          <div className="text-center">
-            <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-              <Image src="/akin akinropo.jpeg" alt="Akin Akinropo" width={192} height={256} className="w-full h-full object-cover object-top" />
+        <div className="max-w-6xl mx-auto">
+          {/* Pastors at the top */}
+          <div className="flex justify-center gap-12 mb-12">
+            <div className="text-center">
+              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+                <Image src="/PastorOlumideOkeowo.jpeg" alt="Pastor Olumide Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
+              </div>
+              <h4 className="font-bold text-blue-900">Pastor Olumide Okeowo</h4>
+              <p className="text-sm text-gray-600">Pastor</p>
             </div>
-            <h4 className="font-bold text-blue-900">Akin Akinropo</h4>
+            <div className="text-center">
+              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+                <Image src="/DamilolaOkeowo.jpg" alt="Damilola Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
+              </div>
+              <h4 className="font-bold text-blue-900">Damilola Okeowo</h4>
+              <p className="text-sm text-gray-600">Pastor</p>
+            </div>
           </div>
-          <div className="text-center">
-            <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-              <Image src="/Dolapo Akinropo.jpeg" alt="Dolapo Akinropo" width={192} height={256} className="w-full h-full object-cover object-top" />
+          
+          {/* Team members below in grid */}
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+                <Image src="/akin akinropo.jpeg" alt="Akin Akinropo" width={192} height={256} className="w-full h-full object-cover object-top" />
+              </div>
+              <h4 className="font-bold text-blue-900">Akin Akinropo</h4>
+              <p className="text-sm text-gray-600">Team Member</p>
             </div>
-            <h4 className="font-bold text-blue-900">Dolapo Akinropo</h4>
-          </div>
-          <div className="text-center">
-            <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-              <Image src="/DamilolaOkeowo.jpg" alt="Damilola Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
+            <div className="text-center">
+              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+                <Image src="/Dolapo Akinropo.jpeg" alt="Dolapo Akinropo" width={192} height={256} className="w-full h-full object-cover object-top" />
+              </div>
+              <h4 className="font-bold text-blue-900">Dolapo Akinropo</h4>
+              <p className="text-sm text-gray-600">Team Member</p>
             </div>
-            <h4 className="font-bold text-blue-900">Damilola Okeowo</h4>
-          </div>
-          <div className="text-center">
-            <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-              <Image src="/IsaacAkingbade.jpg" alt="Isaac Akingbade" width={192} height={256} className="w-full h-full object-cover object-top" />
+            <div className="text-center">
+              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+                <Image src="/IsaacAkingbade.jpg" alt="Isaac Akingbade" width={192} height={256} className="w-full h-full object-cover object-top" />
+              </div>
+              <h4 className="font-bold text-blue-900">Isaac Akingbade</h4>
+              <p className="text-sm text-gray-600">Team Member</p>
             </div>
-            <h4 className="font-bold text-blue-900">Isaac Akingbade</h4>
-          </div>
-          <div className="text-center">
-            <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-              <Image src="/IsaacAyomide.jpg" alt="Isaac Ayomide" width={192} height={256} className="w-full h-full object-cover object-top" />
+            <div className="text-center">
+              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+                <Image src="/IsaacAyomide.jpg" alt="Isaac Ayomide" width={192} height={256} className="w-full h-full object-cover object-top" />
+              </div>
+              <h4 className="font-bold text-blue-900">Isaac Ayomide</h4>
+              <p className="text-sm text-gray-600">Team Member</p>
             </div>
-            <h4 className="font-bold text-blue-900">Isaac Ayomide</h4>
           </div>
         </div>
       </section>
