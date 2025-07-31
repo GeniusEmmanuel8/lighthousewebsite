@@ -176,7 +176,7 @@ export default function AboutContent() {
               <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
                 <Image src="/DamilolaOkeowo.jpg" alt="Damilola Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
-              <h4 className="font-bold text-blue-900">Damilola Okeowo</h4>
+              <h4 className="font-bold text-blue-900">Pastor Damilola Okeowo</h4>
               <p className="text-sm text-gray-600">Pastor</p>
             </div>
           </div>
