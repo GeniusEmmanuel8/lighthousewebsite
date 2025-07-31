@@ -164,52 +164,52 @@ export default function AboutContent() {
         <h2 className="text-3xl font-bold text-blue-900 text-center mb-8">Meet Our Team</h2>
         <div className="max-w-6xl mx-auto">
           {/* Pastors at the top */}
-          <div className="flex justify-center gap-12 mb-12">
+          <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-12 mb-8 md:mb-12">
             <div className="text-center">
-              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+              <div className="w-40 h-52 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
                 <Image src="/PastorOlumideOkeowo.jpeg" alt="Pastor Olumide Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
-              <h4 className="font-bold text-blue-900">Pastor Olumide Okeowo</h4>
+              <h4 className="font-bold text-blue-900 text-lg md:text-xl">Pastor Olumide Okeowo</h4>
               <p className="text-sm text-gray-600">Pastor</p>
             </div>
             <div className="text-center">
-              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+              <div className="w-40 h-52 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
                 <Image src="/DamilolaOkeowo.jpg" alt="Damilola Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
-              <h4 className="font-bold text-blue-900">Pastor Damilola Okeowo</h4>
+              <h4 className="font-bold text-blue-900 text-lg md:text-xl">Pastor Damilola Okeowo</h4>
               <p className="text-sm text-gray-600">Pastor</p>
             </div>
           </div>
           
           {/* Team members below in grid */}
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             <div className="text-center">
-              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+              <div className="w-32 h-40 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
                 <Image src="/akin akinropo.jpeg" alt="Akin Akinropo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
-              <h4 className="font-bold text-blue-900">Akin Akinropo</h4>
-              <p className="text-sm text-gray-600">Team Member</p>
+              <h4 className="font-bold text-blue-900 text-sm md:text-base">Akin Akinropo</h4>
+              <p className="text-xs md:text-sm text-gray-600">Team Member</p>
             </div>
             <div className="text-center">
-              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+              <div className="w-32 h-40 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
                 <Image src="/Dolapo Akinropo.jpeg" alt="Dolapo Akinropo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
-              <h4 className="font-bold text-blue-900">Dolapo Akinropo</h4>
-              <p className="text-sm text-gray-600">Team Member</p>
+              <h4 className="font-bold text-blue-900 text-sm md:text-base">Dolapo Akinropo</h4>
+              <p className="text-xs md:text-sm text-gray-600">Team Member</p>
             </div>
             <div className="text-center">
-              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+              <div className="w-32 h-40 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
                 <Image src="/IsaacAkingbade.jpg" alt="Isaac Akingbade" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
-              <h4 className="font-bold text-blue-900">Isaac Akingbade</h4>
-              <p className="text-sm text-gray-600">Team Member</p>
+              <h4 className="font-bold text-blue-900 text-sm md:text-base">Isaac Akingbade</h4>
+              <p className="text-xs md:text-sm text-gray-600">Team Member</p>
             </div>
             <div className="text-center">
-              <div className="w-48 h-64 mx-auto mb-4 overflow-hidden rounded-lg">
+              <div className="w-32 h-40 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
                 <Image src="/IsaacAyomide.jpg" alt="Isaac Ayomide" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
-              <h4 className="font-bold text-blue-900">Isaac Ayomide</h4>
-              <p className="text-sm text-gray-600">Team Member</p>
+              <h4 className="font-bold text-blue-900 text-sm md:text-base">Isaac Ayomide</h4>
+              <p className="text-xs md:text-sm text-gray-600">Team Member</p>
             </div>
           </div>
         </div>

@@ -66,19 +66,19 @@ export default function Home() {
         )}
         
         {currentSlideData.type === 'youtube' && (
-          <div className="absolute inset-0 bg-black flex items-center justify-center">
-            <div className="text-center text-white">
-              <h1 className="text-5xl md:text-7xl font-black mb-8">
+          <div className="absolute inset-0 bg-black flex items-center justify-center px-4">
+            <div className="text-center text-white max-w-4xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black mb-4 md:mb-8">
                 {currentSlideData.title}
               </h1>
-              <p className="text-xl md:text-2xl mb-8">
+              <p className="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 px-4">
                 {currentSlideData.description}
               </p>
               <a 
                 href={currentSlideData.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-red-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-700 transition-all shadow-lg hover:shadow-xl"
+                className="bg-red-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-red-700 transition-all shadow-lg hover:shadow-xl"
               >
                 Watch Services Online
               </a>
@@ -101,38 +101,38 @@ export default function Home() {
       </section>
 
       {/* Service Times Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 md:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-6xl md:text-7xl font-black text-blue-900 mb-8">Join Us This Sunday</h2>
-            <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-blue-900 mb-4 md:mb-8">Join Us This Sunday</h2>
+            <p className="text-lg md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
               Experience powerful worship, inspiring teaching, and a welcoming community
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-3xl shadow-xl p-10 text-center hover:shadow-2xl transition-all">
-              <div className="w-24 h-24 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-8">
-                <svg className="w-12 h-12 text-blue-900" fill="currentColor" viewBox="0 0 20 20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="bg-white rounded-3xl shadow-xl p-6 md:p-10 text-center hover:shadow-2xl transition-all">
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 md:mb-8">
+                <svg className="w-10 h-10 md:w-12 md:h-12 text-blue-900" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd"/>
                 </svg>
               </div>
-              <h3 className="text-3xl font-bold text-blue-900 mb-6">Sunday Service</h3>
-              <p className="text-4xl font-black text-yellow-500 mb-4">10:00 AM</p>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">Main worship service with contemporary music, inspiring message, and children's ministry</p>
-              <a href="/contact" className="bg-yellow-400 text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <h3 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4 md:mb-6">Sunday Service</h3>
+              <p className="text-3xl md:text-4xl font-black text-yellow-500 mb-3 md:mb-4">10:00 AM</p>
+              <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">Main worship service with contemporary music, inspiring message, and children's ministry</p>
+              <a href="/contact" className="bg-yellow-400 text-blue-900 px-6 py-3 md:px-8 md:py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl text-sm md:text-base">
                 Plan Your Visit
               </a>
             </div>
-            <div className="bg-white rounded-3xl shadow-xl p-10 text-center hover:shadow-2xl transition-all">
-              <div className="w-24 h-24 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-8">
-                <svg className="w-12 h-12 text-blue-900" fill="currentColor" viewBox="0 0 20 20">
+            <div className="bg-white rounded-3xl shadow-xl p-6 md:p-10 text-center hover:shadow-2xl transition-all">
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 md:mb-8">
+                <svg className="w-10 h-10 md:w-12 md:h-12 text-blue-900" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                 </svg>
               </div>
-              <h3 className="text-3xl font-bold text-blue-900 mb-6">Location</h3>
-              <p className="text-lg text-gray-700 mb-2">925 Highway 124</p>
-              <p className="text-gray-600 mb-8">Braselton, GA 30517</p>
-              <a href="/contact" className="bg-yellow-400 text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <h3 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4 md:mb-6">Location</h3>
+              <p className="text-base md:text-lg text-gray-700 mb-2">925 Highway 124</p>
+              <p className="text-sm md:text-base text-gray-600 mb-6 md:mb-8">Braselton, GA 30517</p>
+              <a href="/contact" className="bg-yellow-400 text-blue-900 px-6 py-3 md:px-8 md:py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl text-sm md:text-base">
                 Get Directions
               </a>
             </div>
