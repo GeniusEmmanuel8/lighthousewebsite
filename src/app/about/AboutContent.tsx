@@ -2,90 +2,114 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export default function AboutContent() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const slides = [
+    {
+      src: '/church photo.jpeg',
+      alt: 'Lighthouse Atlanta Church'
+    },
+    {
+      src: '/White Pastors Visitation Website.JPG',
+      alt: 'Pastors Visitation'
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000); // 4 seconds
+
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const currentSlideData = slides[currentSlide];
+
   return (
     <main className="bg-white min-h-screen font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center py-32 md:py-40 text-white overflow-hidden mt-16 md:mt-20">
+      <section className="relative flex flex-col items-center justify-center py-12 sm:py-16 md:py-32 lg:py-40 text-white overflow-hidden mt-16 md:mt-20">
         {/* Church Photo Background */}
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/church photo.jpeg" 
-            alt="Lighthouse Atlanta Church" 
+            src={currentSlideData.src}
+            alt={currentSlideData.alt}
             fill 
-            className="object-cover"
+            className="object-cover transition-all duration-1000 ease-in-out"
             priority
           />
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black/50 z-10"></div>
         </div>
-        <h1 className="relative z-20 text-5xl md:text-7xl font-black mb-4 drop-shadow-2xl">
+        <h1 className="relative z-20 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black mb-3 sm:mb-4 drop-shadow-2xl px-4 text-center">
           Who We Are
-          <span className="block w-24 h-1 mx-auto mt-4 bg-yellow-400 rounded-full" />
+          <span className="block w-12 sm:w-16 md:w-24 h-1 mx-auto mt-2 sm:mt-4 bg-yellow-400 rounded-full" />
         </h1>
-        <p className="relative z-20 text-xl md:text-2xl max-w-2xl text-center mb-8">Welcome to Lighthouse Atlanta! We are a vibrant, Christ-centered community passionate about loving God, loving people, and making disciples.</p>
+        <p className="relative z-20 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-2xl text-center mb-6 sm:mb-8 px-4">Welcome to Lighthouse Atlanta! We are a vibrant, Christ-centered community passionate about loving God, loving people, and making disciples.</p>
       </section>
       {/* Mission & Vision Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 md:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-6xl md:text-7xl font-black text-church-navy mb-8">Our Vision & Mission</h2>
-            <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-church-navy mb-4 md:mb-8">Our Vision & Mission</h2>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
               Our vision is adapted from the main vision of the RCCG
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 max-w-6xl mx-auto">
             {/* Vision */}
-            <div className="bg-white rounded-3xl shadow-xl p-10 hover:shadow-2xl transition-all">
-              <h3 className="text-4xl font-black text-church-navy mb-8 flex items-center">
-                <span className="text-church-gold mr-4">•</span>
+            <div className="bg-white rounded-3xl shadow-xl p-6 md:p-10 hover:shadow-2xl transition-all">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-church-navy mb-6 md:mb-8 flex items-center">
+                <span className="text-church-gold mr-3 md:mr-4">•</span>
                 Vision
               </h3>
-              <p className="text-lg text-gray-700 mb-6">Our vision is adapted from the main vision of the RCCG:</p>
-              <ul className="space-y-4 text-left">
+              <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">Our vision is adapted from the main vision of the RCCG:</p>
+              <ul className="space-y-3 md:space-y-4 text-left">
                 <li className="flex items-start">
                   <span className="text-church-gold mr-3 mt-1">•</span>
-                  <span className="text-gray-700">To make Heaven....</span>
+                  <span className="text-sm md:text-base text-gray-700">To make Heaven....</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-church-gold mr-3 mt-1">•</span>
-                  <span className="text-gray-700">To take as many people as possible with us....</span>
+                  <span className="text-sm md:text-base text-gray-700">To take as many people as possible with us....</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-church-gold mr-3 mt-1">•</span>
-                  <span className="text-gray-700">To have a member of RCCG in every family of all nations...</span>
+                  <span className="text-sm md:text-base text-gray-700">To have a member of RCCG in every family of all nations...</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-church-gold mr-3 mt-1">•</span>
-                  <span className="text-gray-700">To accomplish number 1 above, Holiness will be our lifestyle...</span>
+                  <span className="text-sm md:text-base text-gray-700">To accomplish number 1 above, Holiness will be our lifestyle...</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-church-gold mr-3 mt-1">•</span>
-                  <span className="text-gray-700">To accomplish no. 2 and 3 above, we will plant Churches within 5 minutes driving distance in every city and town of developed countries.</span>
+                  <span className="text-sm md:text-base text-gray-700">To accomplish no. 2 and 3 above, we will plant Churches within 5 minutes driving distance in every city and town of developed countries.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-church-gold mr-3 mt-1">•</span>
-                  <span className="text-gray-700">To pursue the above objectives until every nation in the World is reached for Jesus Christ our Lord!</span>
+                  <span className="text-sm md:text-base text-gray-700">To pursue the above objectives until every nation in the World is reached for Jesus Christ our Lord!</span>
                 </li>
               </ul>
             </div>
             {/* Mission */}
-            <div className="bg-white rounded-3xl shadow-xl p-10 hover:shadow-2xl transition-all">
-              <h3 className="text-4xl font-black text-church-navy mb-8 flex items-center">
-                <span className="text-church-gold mr-4">•</span>
+            <div className="bg-white rounded-3xl shadow-xl p-6 md:p-10 hover:shadow-2xl transition-all">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-church-navy mb-6 md:mb-8 flex items-center">
+                <span className="text-church-gold mr-3 md:mr-4">•</span>
                 Mission
               </h3>
-              <p className="text-lg text-gray-700 mb-6">To be the Light of hope in a dark world, amplifying the joy of the Lord, bringing liberty to the captive, and a more purposeful life to all.</p>
-              <div className="mt-8">
-                <h4 className="text-2xl font-bold text-church-navy mb-4 flex items-center">
+              <p className="text-base md:text-lg text-gray-700 mb-4 md:mb-6">To be a light of hope in a dark world, amplifying the joy of the Lord, bringing freedom to the captive, and inspiring a purposeful life for all.</p>
+              <div className="mt-6 md:mt-8">
+                <h4 className="text-xl md:text-2xl font-bold text-church-navy mb-3 md:mb-4 flex items-center">
                   <span className="text-church-gold mr-3">•</span>
                   Mission Statement
                 </h4>
-                <p className="text-lg text-gray-700 mb-4">To be a light of hope in a dark world</p>
-                <div className="mt-6">
-                  <p className="text-lg font-semibold text-church-navy">Payoff Line:</p>
-                  <p className="text-xl italic text-church-gold font-bold">"...Be the Light, Shine your light"</p>
+                <p className="text-base md:text-lg text-gray-700 mb-3 md:mb-4">Bringing hope, joy, freedom, and purpose to a world in need through the light of Christ.</p>
+                <div className="mt-4 md:mt-6">
+                  <p className="text-base md:text-lg font-semibold text-church-navy mb-2">Payoff Line:</p>
+                  <p className="text-lg md:text-xl italic text-church-gold font-bold">"...Be the Light, Shine your light"</p>
                 </div>
               </div>
             </div>
@@ -119,7 +143,7 @@ export default function AboutContent() {
           </div>
           <div className="bg-white rounded-xl shadow p-6 text-center">
             <h4 className="text-xl font-bold mb-2">Mission</h4>
-            <p>To be the Light of hope in a dark world, amplifying the joy of the Lord, bringing liberty to the captive, and a more purposeful life to all.</p>
+            <p>To be a light of hope in a dark world, amplifying the joy of the Lord, bringing freedom to the captive, and inspiring a purposeful life for all.</p>
           </div>
           <div className="bg-white rounded-xl shadow p-6 text-center">
             <h4 className="text-xl font-bold mb-2">Community</h4>
@@ -145,7 +169,9 @@ export default function AboutContent() {
           </div>
         </div>
         <div className="text-center mt-8">
-          <Link href="#"><span className="inline-block bg-yellow-500 text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-blue-900 transition">Read Full Statement of Faith</span></Link>
+          <a href="/Our Statement of Faith.docx" target="_blank" rel="noopener noreferrer">
+            <span className="inline-block bg-yellow-500 text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-blue-900 transition">Read Full Statement of Faith</span>
+          </a>
         </div>
       </section>
       {/* Pastor's Word */}
@@ -167,14 +193,14 @@ export default function AboutContent() {
           <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-12 mb-8 md:mb-12">
             <div className="text-center">
               <div className="w-40 h-52 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-                <Image src="/PastorOlumideOkeowo.jpeg" alt="Olumide Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
+                <Image src="/pastorolumideokeowo2.jpeg" alt="Olumide Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
               <h4 className="font-bold text-blue-900 text-lg md:text-xl">Olumide Okeowo</h4>
               <p className="text-sm text-gray-600">Senior Pastor</p>
             </div>
             <div className="text-center">
               <div className="w-40 h-52 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-                <Image src="/DamilolaOkeowo.jpg" alt="Damilola Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
+                <Image src="/Daamy Headshot.jpg" alt="Damilola Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
               <h4 className="font-bold text-blue-900 text-lg md:text-xl">Damilola Okeowo</h4>
               <p className="text-sm text-gray-600">Pastor (Mrs)</p>
@@ -185,30 +211,30 @@ export default function AboutContent() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             <div className="text-center">
               <div className="w-32 h-40 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-                <Image src="/akin akinropo.jpeg" alt="Akin Akinropo" width={192} height={256} className="w-full h-full object-cover object-top" />
+                <Image src="/Pst Ajibola Website.JPG" alt="Ajibola" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
-              <h4 className="font-bold text-blue-900 text-sm md:text-base">Akin Akinropo</h4>
-              <p className="text-xs md:text-sm text-gray-600">Minister</p>
+              <h4 className="font-bold text-blue-900 text-sm md:text-base">Ajibola</h4>
+              <p className="text-xs md:text-sm text-gray-600">Assistant Pastor</p>
             </div>
             <div className="text-center">
               <div className="w-32 h-40 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-                <Image src="/Dolapo Akinropo.jpeg" alt="Dolapo Akinropo" width={192} height={256} className="w-full h-full object-cover object-top" />
+                <Image src="/Dolapo Akinropo Website.jpg" alt="Dolapo Akinropo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
               <h4 className="font-bold text-blue-900 text-sm md:text-base">Dolapo Akinropo</h4>
               <p className="text-xs md:text-sm text-gray-600">Minister</p>
             </div>
             <div className="text-center">
               <div className="w-32 h-40 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-                <Image src="/IsaacAkingbade.jpg" alt="Isaac Akingbade" width={192} height={256} className="w-full h-full object-cover object-top" />
+                <Image src="/Akin akinropo Website.jpg" alt="Akin Akinropo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
-              <h4 className="font-bold text-blue-900 text-sm md:text-base">Isaac Akingbade</h4>
+              <h4 className="font-bold text-blue-900 text-sm md:text-base">Akin Akinropo</h4>
               <p className="text-xs md:text-sm text-gray-600">Minister</p>
             </div>
             <div className="text-center">
               <div className="w-32 h-40 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-                <Image src="/IsaacAyomide.jpg" alt="Isaac Ayomide" width={192} height={256} className="w-full h-full object-cover object-top" />
+                <Image src="/Pastor Isaac Akingbade Website.JPG" alt="Isaac Akingbade" width={192} height={256} className="w-full h-full object-cover object-center" />
               </div>
-              <h4 className="font-bold text-blue-900 text-sm md:text-base">Isaac Ayomide</h4>
+              <h4 className="font-bold text-blue-900 text-sm md:text-base">Isaac Akingbade</h4>
               <p className="text-xs md:text-sm text-gray-600">Minister</p>
             </div>
           </div>

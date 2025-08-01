@@ -42,7 +42,7 @@ export default function ContactContent() {
             </div>
             <div className="flex items-center gap-3">
               <span className="material-icons text-yellow-400">email</span>
-              <span>info@lighthouseatlanta.com</span>
+              <span>info@rccgthelighthouse.org</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="material-icons text-yellow-400">schedule</span>

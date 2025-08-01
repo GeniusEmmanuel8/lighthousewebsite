@@ -19,12 +19,12 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-xl bg-white/30 border-b border-white/20 shadow-lg">
-      <nav className="max-w-7xl mx-auto flex justify-between items-center py-2 md:py-4 px-4 md:px-12">
+      <nav className="max-w-7xl mx-auto flex justify-between items-center py-1 md:py-2 px-4 md:px-12">
         {/* Logo and Name */}
         <div className="flex items-center gap-1">
           <Link href="/" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
-            <Image src="/Logo.jpeg" alt="Lighthouse Atlanta Logo" width={48} height={48} className="h-12 w-12 md:h-16 md:w-16 object-contain rounded-full shadow-md" />
-            <span className="text-xl md:text-2xl font-black text-black drop-shadow-sm">RCCG The Lighthouse Atlanta</span>
+            <Image src="/Logo.jpeg" alt="Lighthouse Atlanta Logo" width={80} height={80} className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain rounded-full shadow-md" />
+            <span className="text-xs sm:text-sm md:text-xl lg:text-2xl font-bold text-gray-800 drop-shadow-sm hidden sm:block">RCCG Lighthouse, Atlanta</span>
           </Link>
         </div>
         
