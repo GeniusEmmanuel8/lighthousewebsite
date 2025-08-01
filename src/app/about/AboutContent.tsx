@@ -167,16 +167,16 @@ export default function AboutContent() {
           <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-12 mb-8 md:mb-12">
             <div className="text-center">
               <div className="w-40 h-52 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-                <Image src="/PastorOlumideOkeowo.jpeg" alt="Pastor Olumide Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
+                <Image src="/PastorOlumideOkeowo.jpeg" alt="Olumide Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
-              <h4 className="font-bold text-blue-900 text-lg md:text-xl">Pastor Olumide Okeowo</h4>
+              <h4 className="font-bold text-blue-900 text-lg md:text-xl">Olumide Okeowo</h4>
               <p className="text-sm text-gray-600">Pastor</p>
             </div>
             <div className="text-center">
               <div className="w-40 h-52 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-                <Image src="/DamilolaOkeowo.jpg" alt="Pastor (Mrs) Damilola Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
+                <Image src="/DamilolaOkeowo.jpg" alt="Damilola Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
-              <h4 className="font-bold text-blue-900 text-lg md:text-xl">Pastor (Mrs) Damilola Okeowo</h4>
+              <h4 className="font-bold text-blue-900 text-lg md:text-xl">Damilola Okeowo</h4>
               <p className="text-sm text-gray-600">Deaconess</p>
             </div>
           </div>
