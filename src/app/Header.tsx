@@ -24,6 +24,7 @@ export default function Header() {
         <div className="flex items-center gap-1">
           <Link href="/" className="flex items-center gap-1 hover:opacity-80 transition-opacity">
             <Image src="/Logo.jpeg" alt="Lighthouse Atlanta Logo" width={48} height={48} className="h-12 w-12 md:h-16 md:w-16 object-contain rounded-full shadow-md" />
+            <span className="text-xl md:text-2xl font-black text-black drop-shadow-sm">RCCG The Lighthouse Atlanta</span>
           </Link>
         </div>
         
