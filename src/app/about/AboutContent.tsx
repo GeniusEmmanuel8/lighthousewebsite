@@ -177,6 +177,7 @@ export default function AboutContent() {
                 <Image src="/DamilolaOkeowo.jpg" alt="Damilola Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
               <h4 className="font-bold text-blue-900 text-lg md:text-xl">Damilola Okeowo</h4>
+              <p className="text-sm text-gray-600">Pastor (Mrs)</p>
               <p className="text-sm text-gray-600">Deaconess</p>
             </div>
           </div>
