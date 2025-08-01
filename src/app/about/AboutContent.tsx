@@ -170,7 +170,7 @@ export default function AboutContent() {
                 <Image src="/PastorOlumideOkeowo.jpeg" alt="Olumide Okeowo" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
               <h4 className="font-bold text-blue-900 text-lg md:text-xl">Olumide Okeowo</h4>
-              <p className="text-sm text-gray-600">Pastor</p>
+              <p className="text-sm text-gray-600">Senior Pastor</p>
             </div>
             <div className="text-center">
               <div className="w-40 h-52 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
