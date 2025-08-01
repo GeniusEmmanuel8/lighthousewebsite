@@ -189,8 +189,8 @@ export default function Home() {
               { name: "Community Outreach", description: "Serve our community and share God's love in practical ways" }
             ].map((ministry, i) => (
               <div key={i} className="bg-white rounded-3xl shadow-xl p-8 text-center hover:scale-105 transition-transform duration-300">
-                <div className="w-24 h-24 flex items-center justify-center mx-auto mb-6">
-                  <Image src="/logo4.jpeg" alt={ministry.name} width={64} height={64} className="rounded-full" />
+                <div className="w-28 h-28 flex items-center justify-center mx-auto mb-6">
+                  <Image src="/logo4.jpeg" alt={ministry.name} width={80} height={80} className="rounded-full" />
                 </div>
                 <h3 className="text-2xl font-bold text-blue-900 mb-4">{ministry.name}</h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">{ministry.description}</p>
