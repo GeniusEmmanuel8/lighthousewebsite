@@ -60,8 +60,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/logo4.jpeg" />
+        <link rel="icon" href="/Logo.jpeg" />
+        <link rel="apple-touch-icon" href="/Logo.jpeg" />
         <meta name="theme-color" content="#181e29" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         

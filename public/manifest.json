@@ -1,7 +1,7 @@
 {
-  "name": "Lighthouse Atlanta - African Church in Atlanta, GA",
+  "name": "Lighthouse Atlanta - Church in Atlanta, GA",
   "short_name": "Lighthouse Atlanta",
-  "description": "A vibrant African church in Atlanta, GA, serving the African community with authentic worship and powerful preaching.",
+  "description": "A vibrant church in Atlanta, GA, serving the community with authentic worship and powerful preaching.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -9,15 +9,15 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/Unknown.png",
+      "src": "/Logo.jpeg",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any maskable"
     },
     {
-      "src": "/Unknown.png",
+      "src": "/Logo.jpeg",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any maskable"
     }
   ],
