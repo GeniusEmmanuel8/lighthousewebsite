@@ -7,21 +7,8 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const slides = [
-    {
-      type: 'video',
-      src: '/WhatsApp Video 2025-07-11 at 16.45.47.mp4',
-      alt: 'Church Service Video'
-    },
-    {
-      type: 'image',
-      src: '/slideshow3.jpeg',
-      alt: 'Church Community'
-    },
-    {
-      type: 'image',
-      src: '/slideshow2.jpeg',
-      alt: 'Church Worship'
-    }
+    { type: 'video', src: '/WhatsApp Video 2025-07-11 at 16.45.47.mp4', alt: 'Lighthouse Atlanta Church Service' },
+    { type: 'youtube', title: 'Watch Our Services Online', description: 'Can\'t make it in person? Join us virtually and experience the same powerful worship and teaching.', youtubeUrl: 'https://www.youtube.com/@RCCGTheLighthouse' }
   ];
 
   useEffect(() => {
