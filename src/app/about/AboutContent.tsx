@@ -31,7 +31,7 @@ export default function AboutContent() {
   return (
     <main className="bg-white min-h-screen font-sans">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center py-12 sm:py-16 md:py-32 lg:py-40 text-white overflow-hidden mt-16 md:mt-20">
+      <section className="relative flex flex-col items-center justify-end pb-8 sm:pb-12 md:pb-16 lg:pb-20 text-white overflow-hidden mt-16 md:mt-20 h-screen">
         {/* Church Photo Background */}
         <div className="absolute inset-0 z-0">
           <Image 
@@ -44,11 +44,15 @@ export default function AboutContent() {
           {/* Dark overlay for better text readability */}
           <div className="absolute inset-0 bg-black/50 z-10"></div>
         </div>
-        <h1 className="relative z-20 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black mb-3 sm:mb-4 drop-shadow-2xl px-4 text-center">
-          Who We Are
-          <span className="block w-12 sm:w-16 md:w-24 h-1 mx-auto mt-2 sm:mt-4 bg-yellow-400 rounded-full" />
-        </h1>
-        <p className="relative z-20 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-2xl text-center mb-6 sm:mb-8 px-4">Welcome to Lighthouse Atlanta! We are a vibrant, Christ-centered community passionate about loving God, loving people, and making disciples.</p>
+        <div className="relative z-20 text-center px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black mb-3 sm:mb-4 drop-shadow-2xl">
+            Who We Are
+            <span className="block w-16 sm:w-20 md:w-24 h-1 mx-auto mt-2 sm:mt-3 md:mt-4 bg-yellow-400 rounded-full" />
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto leading-relaxed">
+            Welcome to Lighthouse Atlanta! We are a vibrant, Christ-centered community passionate about loving God, loving people, and making disciples.
+          </p>
+        </div>
       </section>
       {/* Mission & Vision Section */}
       <section className="py-12 md:py-24 bg-gradient-to-br from-gray-50 to-white">
