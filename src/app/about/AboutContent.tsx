@@ -216,9 +216,9 @@ export default function AboutContent() {
             {/* Ajibola */}
             <div className="text-center">
               <div className="w-32 h-40 md:w-48 md:h-64 mx-auto mb-4 overflow-hidden rounded-lg">
-                <Image src="/Pst Ajibola Website.JPG" alt="Ajibola Olorungbo" width={192} height={256} className="w-full h-full object-cover object-top" />
+                <Image src="/Pst Ajibola Website.JPG" alt="Ajibola Olorungbon" width={192} height={256} className="w-full h-full object-cover object-top" />
               </div>
-              <h4 className="font-bold text-blue-900 text-sm md:text-base">Ajibola Olorungbo</h4>
+              <h4 className="font-bold text-blue-900 text-sm md:text-base">Ajibola Olorungbon</h4>
               <p className="text-xs md:text-sm text-gray-600">Assistant Pastor</p>
             </div>
             <div className="text-center">
