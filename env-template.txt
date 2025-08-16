@@ -1,0 +1,18 @@
+# Contact Form Configuration
+# Copy this content to .env.local and fill in your actual values
+
+# Gmail SMTP Configuration (for email)
+GMAIL_USER=your-email@gmail.com
+GMAIL_PASS=your-app-password
+
+# Twilio Configuration (for SMS)
+TWILIO_ACCOUNT_SID=your-twilio-account-sid
+TWILIO_AUTH_TOKEN=your-twilio-auth-token
+TWILIO_PHONE_NUMBER=your-twilio-phone-number
+
+# Church Contact Information
+CHURCH_PHONE_NUMBER=+19432649644
+CHURCH_EMAIL=info@rccgthelighthouse.org
+
+# Note: Never commit .env.local to version control
+# This file contains sensitive information

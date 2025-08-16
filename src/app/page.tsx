@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedFlier, setSelectedFlier] = useState<{ title: string; image: string; alt: string } | null>(null);
   
   const slides = [
     { type: 'video', src: '/WhatsApp Video 2025-07-11 at 16.45.47.mp4', alt: 'Lighthouse Atlanta Church Service' }
@@ -112,6 +113,84 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Church Fliers Section */}
+      <section className="py-12 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-blue-900 mb-4 md:mb-8">
+              Church Fliers & Updates
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed px-4">
+              Check out our latest event fliers, announcements, and important updates
+            </p>
+          </div>
+
+          {/* Fliers Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                id: '1',
+                title: 'Sunday Service',
+                image: '/church banner.jpeg',
+                alt: 'Sunday Service Announcement'
+              },
+              {
+                id: '2',
+                title: 'Community Outreach',
+                image: '/landscapebanner.jpeg',
+                alt: 'Community Outreach Event'
+              },
+              {
+                id: '3',
+                title: 'Special Events',
+                image: '/Pastor Sola.jpg',
+                alt: 'Special Church Events'
+              }
+            ].map((flier) => (
+              <div
+                key={flier.id}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer group"
+              >
+                {/* Flier Image */}
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={flier.image}
+                    alt={flier.alt}
+                    width={400}
+                    height={300}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500 cursor-pointer"
+                    onClick={() => {
+                      console.log('Flier clicked:', flier);
+                      setSelectedFlier(flier);
+                    }}
+                  />
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-white/90 backdrop-blur-sm rounded-full p-3">
+                        <svg className="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Flier Title */}
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-bold text-blue-900 group-hover:text-blue-700 transition-colors duration-300">
+                    {flier.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+
+
+        </div>
+      </section>
+
       {/* Welcome Message */}
       <section className="py-12 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4">
@@ -213,16 +292,52 @@ export default function Home() {
               className="bg-yellow-400 text-blue-900 px-6 py-3 md:px-10 md:py-5 rounded-full font-bold text-lg md:text-xl hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Plan Your Visit
-        </a>
-        <a
+            </a>
+            <a
               href="/about" 
               className="bg-blue-900 text-yellow-400 px-6 py-3 md:px-10 md:py-5 rounded-full font-bold text-lg md:text-xl hover:bg-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Learn More About Us
             </a>
           </div>
-    </div>
+        </div>
       </section>
+
+      {/* Flier Modal */}
+      {selectedFlier && (
+        <div 
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedFlier(null)}
+        >
+          <div className="relative max-w-4xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden">
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedFlier(null)}
+              className="absolute top-4 right-4 z-10 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-all duration-200 shadow-lg"
+            >
+              <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            {/* Modal Content */}
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-blue-900 mb-4 text-center">
+                {selectedFlier.title}
+              </h3>
+              <div className="relative">
+                <Image
+                  src={selectedFlier.image}
+                  alt={selectedFlier.alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto max-h-[70vh] object-contain rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
