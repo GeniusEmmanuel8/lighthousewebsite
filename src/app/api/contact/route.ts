@@ -98,7 +98,7 @@ export async function POST(request: NextRequest) {
     }
     
     return NextResponse.json(
-      { error: 'Something went wrong. Please try again later or contact us directly.' },
+      { error: 'Something went wrong. Please try again later or email us at info@lighthouseatlanta.com' },
       { status: 500 }
     );
   }

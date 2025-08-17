@@ -99,8 +99,14 @@ export default function ContactContent() {
       setFormStatus(prev => ({ ...prev, error: 'Phone number is required' }));
       return false;
     }
-    if (smsFormData.phone.length < 10) {
-      setFormStatus(prev => ({ ...prev, error: 'Please enter a valid phone number' }));
+    // Better phone number validation - remove all non-digits and check length
+    const phoneDigits = smsFormData.phone.replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
+      setFormStatus(prev => ({ ...prev, error: 'Please enter a valid phone number (at least 10 digits)' }));
+      return false;
+    }
+    if (phoneDigits.length > 15) {
+      setFormStatus(prev => ({ ...prev, error: 'Phone number is too long' }));
       return false;
     }
     if (!smsFormData.message.trim()) {
@@ -151,14 +157,14 @@ export default function ContactContent() {
       } else {
         setFormStatus(prev => ({
           ...prev,
-          error: result.error || 'Something went wrong. Please try again.',
+          error: result.error || 'Something went wrong. Please try again or email us at info@lighthouseatlanta.com',
           isSubmitting: false
         }));
       }
     } catch (error) {
       setFormStatus(prev => ({
         ...prev,
-        error: 'Network error. Please check your connection and try again.',
+        error: 'Network error. Please check your connection and try again or email us at info@lighthouseatlanta.com',
         isSubmitting: false
       }));
     }
@@ -205,14 +211,14 @@ export default function ContactContent() {
       } else {
         setFormStatus(prev => ({
           ...prev,
-          error: result.error || 'Something went wrong. Please try again.',
+          error: result.error || 'Something went wrong. Please try again or call us at (943) 264-9644',
           isSubmitting: false
         }));
       }
     } catch (error) {
       setFormStatus(prev => ({
         ...prev,
-        error: 'Network error. Please check your connection and try again.',
+        error: 'Network error. Please check your connection and try again or call us at (943) 264-9644',
         isSubmitting: false
       }));
     }
@@ -244,6 +250,9 @@ export default function ContactContent() {
         {/* Contact Form Card */}
         <div className="bg-white/70 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-200">
           <h2 className="text-2xl font-bold text-blue-900 mb-6">Send Us a Message</h2>
+          <p className="text-gray-600 mb-6 text-center">
+            Choose your preferred way to contact us. Email is best for detailed messages, while SMS is great for quick questions.
+          </p>
           
           {/* Contact Method Tabs */}
           <div className="flex mb-6 bg-gray-100 rounded-lg p-1">
@@ -255,7 +264,7 @@ export default function ContactContent() {
                   : 'text-gray-600 hover:text-gray-800'
               }`}
             >
-              📧 Email
+              Email
             </button>
             <button
               onClick={() => switchContactMethod('sms')}
@@ -265,7 +274,7 @@ export default function ContactContent() {
                   : 'text-gray-600 hover:text-gray-800'
               }`}
             >
-              📱 Text Message
+              Text Message
             </button>
           </div>
           
@@ -273,10 +282,13 @@ export default function ContactContent() {
           {formStatus.success && (
             <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg contact-success-message">
               <div className="flex items-center justify-between">
-                <span>{formStatus.success}</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">✅</span>
+                  <span className="font-semibold">{formStatus.success}</span>
+                </div>
                 <button
                   onClick={resetForm}
-                  className="text-green-600 hover:text-green-800 font-semibold"
+                  className="text-green-600 hover:text-green-800 font-semibold hover:underline transition-all"
                 >
                   Send Another Message
                 </button>
@@ -341,7 +353,11 @@ export default function ContactContent() {
                       className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none contact-form-textarea" 
                       placeholder="How can we pray for you or help?"
                       disabled={formStatus.isSubmitting}
+                      maxLength={500}
                     ></textarea>
+                    <div className="text-right text-xs text-gray-500 mt-1">
+                      {emailFormData.message.length}/500 characters
+                    </div>
                   </div>
                   
                   <button 
@@ -403,10 +419,14 @@ export default function ContactContent() {
                       rows={4} 
                       value={smsFormData.message}
                       onChange={handleSmsInputChange}
-                      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-yellow-400 focus:outline-none contact-form-textarea" 
+                      className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none contact-form-textarea" 
                       placeholder="How can we pray for you or help?"
                       disabled={formStatus.isSubmitting}
+                      maxLength={160}
                     ></textarea>
+                    <div className="text-right text-xs text-gray-500 mt-1">
+                      {smsFormData.message.length}/160 characters (SMS limit)
+                    </div>
                   </div>
                   
                   <button 

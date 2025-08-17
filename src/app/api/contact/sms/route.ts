@@ -62,13 +62,13 @@ export async function POST(request: NextRequest) {
     // Check if it's a Twilio authentication error
     if (error.code === 20003) {
       return NextResponse.json(
-        { error: 'SMS service not configured. Please call us directly.' },
+        { error: 'SMS service not configured. Please call us at (943) 264-9644' },
         { status: 500 }
       );
     }
     
     return NextResponse.json(
-      { error: 'Something went wrong. Please try again later or call us directly.' },
+      { error: 'Something went wrong. Please try again later or call us at (943) 264-9644' },
       { status: 500 }
     );
   }
