@@ -143,7 +143,7 @@ export default function Home() {
               {
                 id: '3',
                 title: 'Special Events',
-                image: '/Pastor Sola.jpg',
+                image: '/ebenezer.jpg',
                 alt: 'Special Church Events'
               }
             ].map((flier) => (
