@@ -1,74 +1,94 @@
 import { NextRequest, NextResponse } from 'next/server';
 import twilio from 'twilio';
+import { cleanText, clientKey, isPhone, isRateLimited } from '@/lib/security';
+
+const MAX_NAME = 100;
+const MAX_MESSAGE = 500;
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { name, phone, message } = body;
+    // Stricter limit than email because every SMS costs money: 3 per 10 minutes per client
+    if (isRateLimited(`sms:${clientKey(request)}`, 3, 10 * 60 * 1000)) {
+      return NextResponse.json(
+        { error: 'Too many messages. Please wait a few minutes and try again.' },
+        { status: 429 }
+      );
+    }
 
-    // Basic validation
+    let body: unknown;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
+    }
+    const fields = (body ?? {}) as Record<string, unknown>;
+
+    const name = cleanText(fields.name, MAX_NAME);
+    const phone = cleanText(fields.phone, 25);
+    const message = cleanText(fields.message, MAX_MESSAGE, true);
+
     if (!name || !phone || !message) {
       return NextResponse.json(
-        { error: 'Name, phone, and message are required' },
+        { error: 'Name, phone, and message are required (message up to 500 characters)' },
         { status: 400 }
       );
     }
 
-    // Basic phone number validation (simple check)
-    if (phone.length < 10) {
+    if (!isPhone(phone)) {
       return NextResponse.json(
         { error: 'Please enter a valid phone number' },
         { status: 400 }
       );
     }
 
-    // Initialize Twilio client
-    const client = twilio(
-      process.env.TWILIO_ACCOUNT_SID,
-      process.env.TWILIO_AUTH_TOKEN
-    );
-
-    // Format the message
-    const formattedMessage = `New SMS from Lighthouse Church Contact Form:\n\nName: ${name}\nPhone: ${phone}\nMessage: ${message}\n\nSubmitted: ${new Date().toLocaleString()}`;
-
-    // Send SMS to church phone number
-    const twilioMessage = await client.messages.create({
-      body: formattedMessage,
-      from: process.env.TWILIO_PHONE_NUMBER, // Your Twilio phone number
-      to: process.env.CHURCH_PHONE_NUMBER || '+19432649644' // Church phone number
-    });
-
-    // Log the SMS submission
-    console.log('SMS Contact Form Submission:', {
-      name,
-      phone,
-      message,
-      twilioMessageId: twilioMessage.sid,
-      timestamp: new Date().toISOString()
-    });
-
-    // Return success response
-    return NextResponse.json(
-      { 
-        success: true, 
-        message: 'Thank you! We will text you back soon.' 
-      },
-      { status: 200 }
-    );
-
-  } catch (error) {
-    console.error('SMS contact form error:', error);
-    
-    // Check if it's a Twilio authentication error
-    if (error.code === 20003) {
+    // Everything must be configured; there are no fallback phone numbers
+    const accountSid = process.env.TWILIO_ACCOUNT_SID;
+    const authToken = process.env.TWILIO_AUTH_TOKEN;
+    const fromNumber = process.env.TWILIO_PHONE_NUMBER;
+    const churchNumber = process.env.CHURCH_PHONE_NUMBER;
+    if (!accountSid || !authToken || !fromNumber || !churchNumber) {
+      console.error('SMS contact form: Twilio / church phone settings are not configured');
       return NextResponse.json(
-        { error: 'SMS service not configured. Please call us at (943) 264-9644' },
+        { error: 'SMS service not configured. Please contact the church directly.' },
         { status: 500 }
       );
     }
-    
+
+    const client = twilio(accountSid, authToken);
+
+    const formattedMessage = `New SMS from Lighthouse Church Contact Form:\n\nName: ${name}\nPhone: ${phone}\nMessage: ${message}\n\nSubmitted: ${new Date().toLocaleString()}`;
+
+    const twilioMessage = await client.messages.create({
+      body: formattedMessage,
+      from: fromNumber,
+      to: churchNumber,
+    });
+
+    // Log only the message id, not names, phone numbers or message text
+    console.log('SMS contact form submission sent', {
+      twilioMessageId: twilioMessage.sid,
+      timestamp: new Date().toISOString(),
+    });
+
     return NextResponse.json(
-      { error: 'Something went wrong. Please try again later or call us at (943) 264-9644' },
+      {
+        success: true,
+        message: 'Thank you! We will text you back soon.',
+      },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('SMS contact form error:', error);
+
+    if ((error as { code?: number }).code === 20003) {
+      return NextResponse.json(
+        { error: 'SMS service not configured. Please contact the church directly.' },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json(
+      { error: 'Something went wrong. Please try again later or contact the church directly.' },
       { status: 500 }
     );
   }
