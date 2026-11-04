@@ -16,3 +16,9 @@ CHURCH_EMAIL=info@rccgthelighthouse.org
 
 # Note: Never commit .env.local to version control
 # This file contains sensitive information
+
+# Where contact-form emails are delivered (defaults to GMAIL_USER)
+CONTACT_TO_EMAIL=
+
+# Secret for the /api/revalidate endpoint (required; there is no default). Use a long random value.
+REVALIDATE_TOKEN=
